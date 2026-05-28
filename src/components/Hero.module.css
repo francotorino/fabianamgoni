@@ -1,0 +1,318 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background image */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Warm dark overlay with vignette */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at center, transparent 20%, rgba(28, 20, 16, 0.45) 100%),
+    linear-gradient(to bottom,
+      rgba(28, 20, 16, 0.35) 0%,
+      rgba(28, 20, 16, 0.18) 40%,
+      rgba(28, 20, 16, 0.62) 100%
+    );
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+}
+
+.navBrand {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(250, 247, 242, 0.92);
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navLinks a {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.78);
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--gold-light);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menuToggle span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: rgba(250, 247, 242, 0.85);
+}
+
+/* Hero content */
+.content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 900px;
+  animation: heroEnter 1.2s var(--ease-out) both;
+}
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.67rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.4rem;
+  animation: heroEnter 1.2s 0.15s var(--ease-out) both;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 0.95;
+  color: #FAF7F2;
+  margin-bottom: 1.6rem;
+  animation: heroEnter 1.2s 0.25s var(--ease-out) both;
+}
+
+.name span:first-child {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  letter-spacing: -0.01em;
+}
+
+.nameSub {
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-style: italic;
+  letter-spacing: 0.08em;
+  margin-top: -0.1em;
+  color: rgba(250, 247, 242, 0.82);
+}
+
+/* Service rotation */
+.serviceRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  height: 2rem;
+  animation: heroEnter 1.2s 0.38s var(--ease-out) both;
+}
+
+.servicePrefix {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(250, 247, 242, 0.7);
+}
+
+.serviceWord {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold-light);
+  min-width: 140px;
+  text-align: left;
+}
+
+.serviceIn {
+  animation: wordIn 0.38s var(--ease-out) both;
+}
+
+.serviceOut {
+  animation: wordOut 0.38s var(--ease-out) both;
+}
+
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wordOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-7px); }
+}
+
+/* Brand quote */
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(250, 247, 242, 0.65);
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+  animation: heroEnter 1.2s 0.5s var(--ease-out) both;
+}
+
+/* CTA Button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(196, 168, 130, 0.6);
+  color: var(--gold-light);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(44, 36, 32, 0.25);
+  backdrop-filter: blur(8px);
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  animation: heroEnter 1.2s 0.62s var(--ease-out) both;
+}
+
+.cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  animation: heroEnter 1.4s 1s var(--ease-out) both;
+}
+
+.scrollText {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.5);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: rgba(250, 247, 242, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--gold-light);
+  animation: scrollAnim 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 240px;
+    background: rgba(28, 20, 16, 0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.4s var(--ease-out);
+  }
+
+  .navLinks.navOpen {
+    right: 0;
+  }
+
+  .navLinks a {
+    font-size: 0.85rem;
+    color: rgba(250, 247, 242, 0.85);
+  }
+
+  .menuToggle {
+    display: flex;
+    z-index: 20;
+  }
+
+  .serviceRow {
+    flex-direction: column;
+    height: auto;
+    gap: 0.2rem;
+  }
+
+  .serviceWord {
+    text-align: center;
+    min-width: auto;
+  }
+}
