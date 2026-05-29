@@ -52,7 +52,7 @@ export default function About() {
           >
             <h2 className={styles.title}>
               Fotografiando emociones<br />
-              <em>desde hace más de diez años</em>
+              <em>desde hace más de catorce años</em>
             </h2>
 
             <div className={styles.divider} />
@@ -71,7 +71,7 @@ export default function About() {
 
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <span className={styles.statNum}>+10</span>
+                <span className={styles.statNum}>+14</span>
                 <span className={styles.statLabel}>años de experiencia</span>
               </div>
               <div className={styles.statDivider} />
